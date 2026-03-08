@@ -28,7 +28,16 @@ function appendMessage(sender, text, className) {
     const chatBox = document.getElementById("chat-box");
     const msgDiv = document.createElement("div");
     msgDiv.className = `message ${className}`;
-    msgDiv.innerText = `${sender}: ${text}`;
+    
+    // Convert **text** to HTML bold tags
+    let formattedText = text.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
+    
+    // Convert line breaks to <br> tags so lists stack properly
+    formattedText = formattedText.replace(/\n/g, '<br>');
+
+    // Use innerHTML instead of innerText to render the bold tags
+    msgDiv.innerHTML = `<strong>${sender}:</strong> ${formattedText}`;
+    
     chatBox.appendChild(msgDiv);
     chatBox.scrollTop = chatBox.scrollHeight;
 }
