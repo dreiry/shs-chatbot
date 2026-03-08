@@ -28,31 +28,15 @@ body {
 }
 
 /* Header */
-.chat-header {
+h1 {
     background-color: #277038; /* Deep Forest Green */
     color: white;
-    padding: 15px 20px;
-    display: flex;
-    justify-content: space-between; /* Pushes the text left and the logo right */
-    align-items: center; /* Centers them vertically */
+    padding: 20px;
+    font-size: 1.2rem;
+    text-align: center;
+    margin: 0;
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
     z-index: 10;
-}
-
-.chat-header h1 {
-    font-size: 1.2rem;
-    margin: 0;
-    padding: 0;
-    background: transparent;
-    box-shadow: none;
-}
-
-.rsu-logo {
-    height: 40px; /* Keeps the logo perfectly sized */
-    width: auto;
-    border-radius: 50%; /* Makes sure it stays perfectly circular */
-    background-color: white; /* Adds a nice white outline behind the logo */
-    padding: 2px;
 }
 
 /* Chat Messages Area */
