@@ -1,5 +1,5 @@
 // Note: You will replace this URL later in Step 6 with your actual Vercel URL
-const VERCEL_API_URL = "https://shs-chatbot-backend.vercel.app/api/chatbot";;
+const VERCEL_API_URL = "https://shs-chatbot-backend.vercel.app/api/chatbot";
 
 async function sendMessage() {
     const inputField = document.getElementById("user-input");
