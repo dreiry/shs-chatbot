@@ -77,10 +77,41 @@ function appendMessage(sender, text, className) {
     chatBox.scrollTop = chatBox.scrollHeight;
 }
 
-// Automatically send a welcome message when the page loads
+// Automatically send a welcome message and quick replies when the page loads
 window.onload = function() {
-    const welcomeText = "Hello! Welcome to the official Romblon State University - Laboratory Science High School Assistant. Are you curious about our strands, enrollment requirements, or school location?";
-    
-    // Uses your existing message function to make it look exactly like a real reply
+    const welcomeText = "Hello! Welcome to the official Romblon State University - Laboratory Science High School Assistant. How can I help you today?";
     appendMessage("Bot", welcomeText, "bot-msg");
+
+    // Show the quick reply chips
+    showQuickReplies(["Enrollment Requirements", "Available Strands", "School Location"]);
 };
+
+function showQuickReplies(options) {
+    const chatBox = document.getElementById("chat-box");
+    const quickReplyContainer = document.createElement("div");
+    quickReplyContainer.className = "quick-replies";
+    quickReplyContainer.id = "quick-reply-box";
+
+    options.forEach(option => {
+        const button = document.createElement("button");
+        button.className = "quick-reply-btn";
+        button.innerText = option;
+        
+        // What happens when a user clicks the button:
+        button.onclick = () => {
+            // 1. Remove the buttons so they don't clutter the chat
+            document.getElementById("quick-reply-box").remove();
+            
+            // 2. Put the text inside the input box
+            document.getElementById("user-input").value = option;
+            
+            // 3. Trigger your exact same send function!
+            sendMessage();
+        };
+        
+        quickReplyContainer.appendChild(button);
+    });
+
+    chatBox.appendChild(quickReplyContainer);
+    chatBox.scrollTop = chatBox.scrollHeight;
+}
