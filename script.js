@@ -76,3 +76,11 @@ function appendMessage(sender, text, className) {
     chatBox.appendChild(msgDiv);
     chatBox.scrollTop = chatBox.scrollHeight;
 }
+
+// Automatically send a welcome message when the page loads
+window.onload = function() {
+    const welcomeText = "Hello! Welcome to the official Romblon State University - Laboratory Science High School Assistant. Are you curious about our strands, enrollment requirements, or school location?";
+    
+    // Uses your existing message function to make it look exactly like a real reply
+    appendMessage("Bot", welcomeText, "bot-msg");
+};
