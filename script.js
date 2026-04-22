@@ -52,7 +52,7 @@ async function sendMessage() {
 
     try {
         // 🚨 REPLACE THIS with your actual Vercel project link!
-        const backendUrl = 'shs-chatbot-backend.vercel.app/api/chatbot';
+        const backendUrl = 'https://shs-chatbot-backend.vercel.app/api/chatbot';
         
         const response = await fetch(backendUrl, {
             method: 'POST',
