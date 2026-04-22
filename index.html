@@ -9,7 +9,11 @@
 <body>
 
     <div id="chat-container">
-        <h1>RSU-LSHS Assistant</h1>
+        
+        <div class="chat-header">
+            <h1>RSU-LSHS Assistant</h1>
+            <img src="rsu-logo.png" alt="RSU Logo" class="rsu-logo">
+        </div>
         
         <div id="chat-box"></div>
         
@@ -17,6 +21,7 @@
             <input type="text" id="user-input" placeholder="Ask a question..." onkeypress="if(event.key === 'Enter') sendMessage()">
             <button onclick="sendMessage()">Send</button>
         </div>
+
     </div>
 
     <script src="script.js"></script>
